@@ -14,3 +14,8 @@ def comb(n,k):
 	else:
 		ans = fact(n)/(fact(n-k)*fact(k))
 		return ans
+
+def bern(p,n,k):
+	ans = comb(n,k) * p**k * (1-p)**(n-k)
+	return ans
+
