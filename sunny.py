@@ -14,3 +14,5 @@ def comb(n,k):
 	else:
 		ans = fact(n)/(fact(n-k)*fact(k))
 		return ans
+
+print("there's gonna be a conflict(?)")
