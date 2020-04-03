@@ -8,7 +8,7 @@ def fact(a):
 def comb(n,k):
 	if n < k:
 		print("n must bigger then k or equal to it ")
-		return False 
+		return False
 	elif n == k:
 		return 1
 	else:
@@ -19,3 +19,10 @@ def bern(p,n,k):
 	ans = comb(n,k) * p**k * (1-p)**(n-k)
 	return ans
 
+def lotto(n,h,k,p):
+	ans = comb(h,p)*comb((n-h),(k-p))/comb(n,k)
+	return ans
+
+n,h,k,p = int(input()), int(input()), int(input()), int(input())
+
+print(lotto(n,h,k,p))
