@@ -20,9 +20,17 @@ def bern(p,n,k):
 	return ans
 
 def lotto(n,h,k,p):
-	ans = comb(h,p)*comb((n-h),(k-p))/comb(n,k)
-	return ans
+	if type(p) == int:
+		ans = comb(h,p)*comb((n-h),(k-p))/comb(n,k)
+		return ans
+	elif p[1] == "=":
+		if p[0] == "<":
+			ans = 0
+			p = int(p[2:])
+			for i in range(p):
+				ans += comb(h,p)*comb((n-h),(k-p))/comb(n,k)
+			return ans
 
-n,h,k,p = int(input()), int(input()), int(input()), int(input())
+n,h,k,p = int(input()), int(input()), int(input()), input()
 
 print(lotto(n,h,k,p))
