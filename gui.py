@@ -8,6 +8,7 @@ def test(entry):
     print("Button clicked", entry)
 
 root = tk.Tk()
+root.title("Mandelschmandel")
 
 canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
 canvas.pack()
