@@ -7,8 +7,7 @@ def fact(a):
 
 def comb(n,k):
 	if n < k:
-		print("n must bigger then k or equal to it ")
-		return False
+		return 0
 	elif n == k:
 		return 1
 	else:
@@ -28,12 +27,13 @@ def lotto(n,h,k,p):
 			ans = 0
 			p = int(p[2:])
 			for i in range(p):
-				ans += comb(h,p)*comb((n-h),(k-p))/comb(n,k)
+				ans += comb(h,i)*comb((n-h),(k-i))/comb(n,k)
 			return ans
+
 
 n = int(input('Enter n: '))
 k = int(input('Enter k: '))
 h = int(input('Enter h: '))
-p = int(input('Enter p: '))
+p = input('Enter p: ')
 
 print(lotto(n,h,k,p))
