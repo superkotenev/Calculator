@@ -31,6 +31,9 @@ def lotto(n,h,k,p):
 				ans += comb(h,p)*comb((n-h),(k-p))/comb(n,k)
 			return ans
 
-n,h,k,p = int(input()), int(input()), int(input()), input()
+n = int(input('Enter n: '))
+k = int(input('Enter k: '))
+h = int(input('Enter h: '))
+p = int(input('Enter p: '))
 
 print(lotto(n,h,k,p))
