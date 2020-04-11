@@ -18,14 +18,13 @@ def comb(n,k):
 
 def array(m,n):
 	array = []
-	for i in range(1,m+1):
+	for i in range(m):
 		array.append([])
-		for e in range(1,n+1):
+		for e in range(n):
 			array[i].append([])
 	return array
 
-# for i in range(1,5+1):
-# 	print(i)
+
 
 def bern(p,n,k):
 	try:
@@ -41,7 +40,7 @@ def bern(p,n,k):
 				return ans
 			else:
 				ans = 0
-				for i in range(int(k[2:]),n):
+				for i in range(int(k[2:]),n+1):
 					ans += comb(n,i) * p**i * (1-p)**(n-i)
 				return ans
 		else:
@@ -55,6 +54,7 @@ def bern(p,n,k):
 				for i in range(int(k[1:])+1,n+1):
 					ans += comb(n,i) * p**i * (1-p)**(n-i)
 				return ans
+
 
 def lotto(n,h,k,p):
 	try:
@@ -90,19 +90,28 @@ def minmin(p,a):
 	ans = math.log(1-a)/math.log(1-p)
 	return math.ceil(ans)
 
-# def viertafel():
-#
-#
-# print(viertafel())
+a = [0.34, 0, 1]
+b = [0.21, 1, 2]
+c = [0.14, 2, 2]
+
+def vierfeldertafel(a,b,c):
+	tafel = array(3,3)
+	for i in [a,b,c]:
+		tafel[i[1]][i[2]] = i[0]
+	return(tafel)
+	
+
+print(vierfeldertafel(a,b,c))
+
 
 
 # Bernulli input
 
-n = int(input('Enter n: '))
-k = input('Enter k: ')
-p = float(input('Enter p: '))
-
-print(bern(p,n,k))
+# n = int(input('Enter n: '))
+# k = input('Enter k: ')
+# p = float(input('Enter p: '))
+#
+# print(bern(p,n,k))
 
 # Lottomodell input
 #
@@ -120,4 +129,4 @@ print(bern(p,n,k))
 #
 # print(minmin(p,a))
 
-# https://www.abiturma.de/mathe-lernen/stochastik/wichtige-grundbegriffe/die-vierfeldertafel
+# https://www.abiturma.de/mathe-lernen/stochastik/wichtige-grundbegriffe/die-vierfeldertafelc
